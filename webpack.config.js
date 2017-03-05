@@ -18,6 +18,7 @@ module.exports = {
     port: 3000,
     inline: true,
     hot: true,
+    historyApiFallback: true,
     contentBase: resolve(__dirname, "dist"),
     publicPath: "/"
   },
@@ -36,21 +37,24 @@ module.exports = {
         use: [
           "babel-loader",
         ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
+        include: /(node_modules)\/react-toolbox/,
         use: [
           "style-loader",
-          "css-loader?modules"
+          "css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
+          "postcss-loader"
         ],
       },
       {
         test: /\.scss$/,
         use: [
-          "sass-loader",
           "style-loader",
-          "css-loader?modules"
+          "css-loader?modules",
+          "sass-loader",
+          "toolbox-loader"
         ],
       },
     ],
