@@ -1,7 +1,8 @@
+import React from "react"
 import AppBar from "react-toolbox/lib/app_bar"
 
-const Header = () => {
+const Header = () => (
   <AppBar title="Trip Planner" leftIcon="menu" />
-}
+)
 
 export default Header

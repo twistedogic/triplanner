@@ -1,9 +1,11 @@
 import React from "react"
-import Chart from "./component/Chart"
+import Header from "./component/Header"
+import HeatMap from "./component/Heatmap"
 
 const App = () => (
   <div>
-    <Chart />
+    <Header />
+    <HeatMap />
   </div>
 )
 

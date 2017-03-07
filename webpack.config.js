@@ -49,6 +49,11 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ],
+        exclude: /(node_modules)\/react-toolbox/,
+      },
+      {
         test: /\.scss$/,
         use: [
           "style-loader",
@@ -68,4 +73,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
   ],
+
+  resolve:{
+    extensions:[".js",".css",".scss"]
+  },
+
 };
